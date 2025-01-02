@@ -25,12 +25,24 @@
             id="task-input"
             aria-describedby="emailHelp"
           />
+          <label for="pri">Priority</label>
+          <select name="priority" id="pri">
+            <option value="imp-urg">Important & Urgent</option>
+            <option value="urg">Urgent, Not Important</option>
+            <option value="imp">Important, Not Urgent</option>
+            <option value="not-imp-urg">Not Important, Not Urgent</option>
+          </select>
         </div>
         <button id="create-task" class="btn btn-primary">Create Task</button>
       </section>
 
       <!-- listing -->
-      <section class="container" id="listing"></section>
+      <section class="container" id="listing">
+        <div id="imp-urg"></div>
+        <div id="urg"></div>
+        <div id="imp"></div>
+        <div id="not-imp-urg"></div>
+      </section>
     </main>
 
     <!-- bootstrap -->
@@ -45,10 +57,10 @@
 
 <!-- 
 Core functions
-- Create task
-- View task
+- Create task X
+- View task X
 - Update task
-- Delete task
+- Delete task X
 
 Each task
 - Description, EDIT, DELETE  
@@ -58,4 +70,7 @@ Interface
 - Title
 - list of tasks
 - buttons to add/edit/delete tasks
+
+NOTES:
+- sort based on eisenhower?
 -->
