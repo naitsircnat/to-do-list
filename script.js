@@ -17,7 +17,24 @@ createTaskBtn.addEventListener("click", function () {
   </div>
 </div>`;
 
-  taskListing.appendChild(taskCard);
+  let priInput = document.querySelector("#pri");
+
+  let priority = priInput.value;
+
+  let impUrgSec = document.querySelector("#imp-urg");
+  let urgSec = document.querySelector("#urg");
+  let impSec = document.querySelector("#imp");
+  let notImpUrgSec = document.querySelector("#not-imp-urg");
+
+  if (priority == "imp-urg") {
+    impUrgSec.appendChild(taskCard);
+  } else if (priority == "urg") {
+    urgSec.appendChild(taskCard);
+  } else if (priority == "imp") {
+    impSec.appendChild(taskCard);
+  } else {
+    notImpUrgSec.appendChild(taskCard);
+  }
 
   taskInput.value = "";
 });

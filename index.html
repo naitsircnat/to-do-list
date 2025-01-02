@@ -17,16 +17,16 @@
       <h1>To-Do List</h1>
 
       <!-- create -->
-      <section id="create">
+      <section class="container" id="create">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Task</label>
           <input
-            class="form-control"
+            class="form-control mb-3"
             id="task-input"
             aria-describedby="emailHelp"
           />
           <label for="pri">Priority</label>
-          <select name="priority" id="pri">
+          <select name="priority" class="form-control mb-3" id="pri">
             <option value="imp-urg">Important & Urgent</option>
             <option value="urg">Urgent, Not Important</option>
             <option value="imp">Important, Not Urgent</option>
@@ -38,10 +38,10 @@
 
       <!-- listing -->
       <section class="container" id="listing">
-        <div id="imp-urg"></div>
-        <div id="urg"></div>
-        <div id="imp"></div>
-        <div id="not-imp-urg"></div>
+        <div id="imp-urg" class="h4">Important & Urgent</div>
+        <div id="urg" class="h4">Urgent, Not Important</div>
+        <div id="imp" class="h4">Important, Not Urgent</div>
+        <div id="not-imp-urg" class="h4">Not Important, Not Urgent</div>
       </section>
     </main>
 
