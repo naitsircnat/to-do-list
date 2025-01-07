@@ -1,3 +1,7 @@
+body {
+  font-family: "Helvetica";
+}
+
 .sublist {
   border: solid 2px pink;
   border-radius: 8px;

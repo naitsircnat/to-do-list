@@ -7,6 +7,7 @@ let urgSec = document.querySelector("#urg");
 let impSec = document.querySelector("#imp");
 let notImpUrgSec = document.querySelector("#not-imp-urg");
 
+// CREATE AND ADD TASK
 createTaskBtn.addEventListener("click", function () {
   let taskInput = document.querySelector("#task-input");
 
@@ -21,7 +22,7 @@ createTaskBtn.addEventListener("click", function () {
   taskCard.innerHTML = `<div class="card my-2 mt-0" style="width: 16rem;">
  <div class="card-body">
    <h5 class="card-text">${taskDescript}</h5>
-   <h6 class="card-subtitle mb-2 text-muted fs-6">${priority}</h6>
+   <h6 class="card-subtitle mb-2 text-muted fs-6" style= "display:none">${priority}</h6>
    <a href="#" class="btn btn-primary" id="completed">Completed</a>
    <a href="#" class="btn btn-secondary" id="edit" data-bs-toggle="modal" data-bs-target="#edit-form">Edit</a>
  </div>
@@ -42,6 +43,7 @@ createTaskBtn.addEventListener("click", function () {
 
 let currCard = null;
 
+// MARK TASK AS COMPLETED
 taskListing.addEventListener("click", function (event) {
   if (event.target.id == "completed") {
     currCard = event.target.closest(".card");
@@ -49,6 +51,7 @@ taskListing.addEventListener("click", function (event) {
   }
 });
 
+// EDIT TASK
 taskListing.addEventListener("click", function (event) {
   if (event.target.id == "edit") {
     currCard = event.target.closest(".card");
@@ -98,3 +101,26 @@ saveChangesButton.addEventListener("click", function () {
     notImpUrgSec.appendChild(currCard);
   }
 });
+
+// SHOW/HIDE DEFAULT MESSAGE
+// function observeTaskList(container) {
+//   const observer = new MutationObserver(() => {
+//     const defaultMessage = container.querySelector(".default-msg");
+
+//     if (container.children.length > 1) {
+//       defaultMessage.style.display = "none";
+//     } else {
+//       defaultMessage.style.display = "block";
+//     }
+//   });
+
+//   observer.observe(container, { childList: true, subtree: true });
+// }
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   const taskContainers = document.querySelectorAll(".sublist");
+
+//   taskContainers.forEach((container) => {
+//     observeTaskList(container);
+//   });
+// });
