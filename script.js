@@ -61,11 +61,11 @@ taskListing.addEventListener("click", function (event) {
     modalDescriptField.value = currDescript;
 
     // priority
-    // let currPri=currCard.querySelector("#")
+    let currPri = currCard.querySelector(".card-subtitle").textContent;
 
-    // let modalPriField=document.querySelector("#pri");
+    let modalPriField = document.querySelector("#newPri");
 
-    // modalPriField.value=
+    modalPriField.value = currPri;
   }
 });
 
