@@ -7,30 +7,31 @@ createTaskBtn.addEventListener("click", function () {
 
   let taskDescript = taskInput.value;
 
+  let priInput = document.querySelector("#pri");
+
+  let priority = priInput.value;
+
   let taskCard = document.createElement("div");
 
   taskCard.innerHTML = `<div class="card my-2" style="width: 18rem;">
  <div class="card-body">
    <p class="card-text">${taskDescript}</p>
+   <h6 class="card-subtitle mb-2 text-muted">${priority}</h6>
    <a href="#" class="btn btn-primary" id="completed">Completed</a>
    <a href="#" class="btn btn-secondary" id="edit" data-bs-toggle="modal" data-bs-target="#edit-form">Edit</a>
  </div>
 </div>`;
-
-  let priInput = document.querySelector("#pri");
-
-  let priority = priInput.value;
 
   let impUrgSec = document.querySelector("#imp-urg");
   let urgSec = document.querySelector("#urg");
   let impSec = document.querySelector("#imp");
   let notImpUrgSec = document.querySelector("#not-imp-urg");
 
-  if (priority == "imp-urg") {
+  if (priority == "Important & Urgent") {
     impUrgSec.appendChild(taskCard);
-  } else if (priority == "urg") {
+  } else if (priority == "Urgent, Not Important") {
     urgSec.appendChild(taskCard);
-  } else if (priority == "imp") {
+  } else if (priority == "Important, Not Urgent") {
     impSec.appendChild(taskCard);
   } else {
     notImpUrgSec.appendChild(taskCard);
@@ -51,11 +52,20 @@ taskListing.addEventListener("click", function (event) {
 taskListing.addEventListener("click", function (event) {
   if (event.target.id == "edit") {
     currCard = event.target.closest(".card");
+
+    // description
     let currDescript = currCard.querySelector(".card-text").textContent;
 
     let modalDescriptField = document.querySelector("#newDescript");
 
     modalDescriptField.value = currDescript;
+
+    // priority
+    // let currPri=currCard.querySelector("#")
+
+    // let modalPriField=document.querySelector("#pri");
+
+    // modalPriField.value=
   }
 });
 
