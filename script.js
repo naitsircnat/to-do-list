@@ -18,10 +18,10 @@ createTaskBtn.addEventListener("click", function () {
 
   let taskCard = document.createElement("div");
 
-  taskCard.innerHTML = `<div class="card my-2" style="width: 18rem;">
+  taskCard.innerHTML = `<div class="card my-2" style="width: 16rem;">
  <div class="card-body">
    <p class="card-text">${taskDescript}</p>
-   <h6 class="card-subtitle mb-2 text-muted">${priority}</h6>
+   <h6 class="card-subtitle mb-2 text-muted fs-6">${priority}</h6>
    <a href="#" class="btn btn-primary" id="completed">Completed</a>
    <a href="#" class="btn btn-secondary" id="edit" data-bs-toggle="modal" data-bs-target="#edit-form">Edit</a>
  </div>
